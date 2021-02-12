@@ -58,14 +58,13 @@ def main():
         exponent_size = int(input('Please enter a q-value (for exponent):\n').strip())
 
     # read input for the binary
-    raw_binary = input(f'Enter your binary string for {data_type}:\n')
-    raw_binary = raw_binary.strip()
+    raw_binary = input(f'Enter your binary string for {data_type}:\n').strip()
     valid = check_validity(raw_binary)
 
     while not valid:
         print('That is an invalid binary string')
         print(f'You entered {raw_binary} which contains bits outside the range: [0, 1]')
-        raw_binary = input(f'Enter your binary string for {data_type}:\n')
+        raw_binary = input(f'Enter your binary string for {data_type}:\n').strip()
         valid = check_validity(raw_binary)
     
     if len(raw_binary) > exponent_size + mantissa_size + 1:
@@ -92,7 +91,6 @@ def main():
         output *= -1
 
     print(f'Your binary string converts to {output} in decimal form (base-10)')
-
 
 if __name__ == '__main__':
     main()
